@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42A1B558-76BB-488C-BACA-780F008D116D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mazaya_3G_return</RootNamespace>
+    <AssemblyName>Mazaya_3G_return</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLC_mallU">
+      <HintPath>..\BLC_mallU\bin\Debug\BLC_mallU.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="additem_company.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="additem_company.designer.cs">
+      <DependentUpon>additem_company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewItem.designer.cs">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="allchecks_by_name.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="allchecks_by_name.designer.cs">
+      <DependentUpon>allchecks_by_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet2.cs">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet2.Designer.cs" />
+    <Compile Include="DataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditItem.designer.cs">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfile.designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="get_store_items.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>get_store_items.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purshase_Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purshase_Return.Designer.cs">
+      <DependentUpon>Purshase_Return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Query_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Query_Item.Designer.cs">
+      <DependentUpon>Query_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purch_byid.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>purch_byid.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_day_purch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report_day_purch.designer.cs">
+      <DependentUpon>report_day_purch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report_day_Purchase_Return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_day_Purchase_Return.Designer.cs">
+      <DependentUpon>Report_day_Purchase_Return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_day_return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report_day_return.designer.cs">
+      <DependentUpon>report_day_return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_day_sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report_day_sale.designer.cs">
+      <DependentUpon>report_day_sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns.designer.cs">
+      <DependentUpon>Returns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="return_byid2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>return_byid2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SaleCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleCheck.designer.cs">
+      <DependentUpon>SaleCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sale_byid1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sale_byid.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Search_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Check.designer.cs">
+      <DependentUpon>Search_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search_Period.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search_Period.Designer.cs">
+      <DependentUpon>search_Period.cs</DependentUpon>
+    </Compile>
+    <Compile Include="suppliers_payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suppliers_payment.Designer.cs">
+      <DependentUpon>suppliers_payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updatediff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updatediff.designer.cs">
+      <DependentUpon>updatediff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updatediff_for_client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updatediff_for_client.designer.cs">
+      <DependentUpon>updatediff_for_client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updatediff_for_client_Used.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updatediff_for_client_Used.designer.cs">
+      <DependentUpon>updatediff_for_client_Used.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used.designer.cs">
+      <DependentUpon>Used.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_allchecks_by_name.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_allchecks_by_name.designer.cs">
+      <DependentUpon>Used_allchecks_by_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_EditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_EditItem.designer.cs">
+      <DependentUpon>Used_EditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_Query_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_Query_Item.designer.cs">
+      <DependentUpon>Used_Query_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_report_day_purch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_report_day_purch.designer.cs">
+      <DependentUpon>Used_report_day_purch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_report_day_return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_report_day_return.designer.cs">
+      <DependentUpon>Used_report_day_return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_report_day_sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_report_day_sale.designer.cs">
+      <DependentUpon>Used_report_day_sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_Returns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_Returns.designer.cs">
+      <DependentUpon>Used_Returns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_Sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_Sale.designer.cs">
+      <DependentUpon>Used_Sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_Search_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_Search_Check.designer.cs">
+      <DependentUpon>Used_Search_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_suppliers_payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_suppliers_payment.designer.cs">
+      <DependentUpon>Used_suppliers_payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_updatediff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_updatediff.designer.cs">
+      <DependentUpon>Used_updatediff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_View_purch_report_byID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_View_purch_report_byID.Designer.cs">
+      <DependentUpon>Used_View_purch_report_byID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_View_report_return_sale_checks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_View_report_return_sale_checks.Designer.cs">
+      <DependentUpon>Used_View_report_return_sale_checks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_View_report_sale_check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_View_report_sale_check.Designer.cs">
+      <DependentUpon>Used_View_report_sale_check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Used_View_report_store_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Used_View_report_store_items.designer.cs">
+      <DependentUpon>Used_View_report_store_items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view_purch_report_byID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_purch_report_byID.designer.cs">
+      <DependentUpon>view_purch_report_byID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_report_return_sale_check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_report_return_sale_check.designer.cs">
+      <DependentUpon>View_report_return_sale_check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_report_sale_check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_report_sale_check.designer.cs">
+      <DependentUpon>View_report_sale_check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View_report_store_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_report_store_items.Designer.cs">
+      <DependentUpon>View_report_store_items.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="additem_company.resx">
+      <DependentUpon>additem_company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewItem.resx">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allchecks_by_name.resx">
+      <DependentUpon>allchecks_by_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="get_store_items.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>get_store_items.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purshase_Return.resx">
+      <DependentUpon>Purshase_Return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_day_Purchase_Return.resx">
+      <DependentUpon>Report_day_Purchase_Return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search_Period.resx">
+      <DependentUpon>search_Period.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suppliers_payment.resx">
+      <DependentUpon>suppliers_payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updatediff_for_client.resx">
+      <DependentUpon>updatediff_for_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updatediff_for_client_Used.resx">
+      <DependentUpon>updatediff_for_client_Used.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used.resx">
+      <DependentUpon>Used.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_allchecks_by_name.resx">
+      <DependentUpon>Used_allchecks_by_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_EditItem.resx">
+      <DependentUpon>Used_EditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_Query_Item.resx">
+      <DependentUpon>Used_Query_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_report_day_purch.resx">
+      <DependentUpon>Used_report_day_purch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_report_day_return.resx">
+      <DependentUpon>Used_report_day_return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_report_day_sale.resx">
+      <DependentUpon>Used_report_day_sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_Returns.resx">
+      <DependentUpon>Used_Returns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_Sale.resx">
+      <DependentUpon>Used_Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_Search_Check.resx">
+      <DependentUpon>Used_Search_Check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_suppliers_payment.resx">
+      <DependentUpon>Used_suppliers_payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_updatediff.resx">
+      <DependentUpon>Used_updatediff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_View_purch_report_byID.resx">
+      <DependentUpon>Used_View_purch_report_byID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_View_report_return_sale_checks.resx">
+      <DependentUpon>Used_View_report_return_sale_checks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_View_report_sale_check.resx">
+      <DependentUpon>Used_View_report_sale_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Used_View_report_store_items.resx">
+      <DependentUpon>Used_View_report_store_items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_report_store_items.resx">
+      <DependentUpon>View_report_store_items.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="EditItem.resx">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="purch_byid.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>purch_byid.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Query_Item.resx">
+      <DependentUpon>Query_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_day_purch.resx">
+      <DependentUpon>report_day_purch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_day_return.resx">
+      <DependentUpon>report_day_return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_day_sale.resx">
+      <DependentUpon>report_day_sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns.resx">
+      <DependentUpon>Returns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="return_byid2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>return_byid2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleCheck.resx">
+      <DependentUpon>SaleCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sale_byid.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sale_byid1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Check.resx">
+      <DependentUpon>Search_Check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updatediff.resx">
+      <DependentUpon>updatediff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_purch_report_byID.resx">
+      <DependentUpon>view_purch_report_byID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_report_return_sale_check.resx">
+      <DependentUpon>View_report_return_sale_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_report_sale_check.resx">
+      <DependentUpon>View_report_sale_check.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

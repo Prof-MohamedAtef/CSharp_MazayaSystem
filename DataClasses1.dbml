@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="mazaya" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=mazaya;Integrated Security=True" SettingsObjectName="Mazaya_3G_return.Properties.Settings" SettingsPropertyName="mazayaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Accessories_Types_2" Member="Accessories_Types_2s">
+    <Type Name="Accessories_Types_2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Screen_Title_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accessories_types" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Items" Member="Items">
+    <Type Name="Item">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Producing_company_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Screen_Title_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.login_Tbl" Member="login_Tbls">
+    <Type Name="login_Tbl">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="add_ress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="hint" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment_In" Member="Payment_Ins">
+    <Type Name="Payment_In">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cashir_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pay_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Producing_company" Member="Producing_companies">
+    <Type Name="Producing_company">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Producing_company" Member="Producing_company1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Purchase_check" Member="Purchase_checks">
+    <Type Name="Purchase_check">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Casher_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="remaining_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.purchase_check_details" Member="purchase_check_details">
+    <Type Name="purchase_check_detail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="purchase_check_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Returns_check" Member="Returns_checks">
+    <Type Name="Returns_check">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Return_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Return_from" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cashier_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sale_check_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Returns_check_details" Member="Returns_check_details">
+    <Type Name="Returns_check_detail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Returns_check_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sale_check" Member="Sale_checks">
+    <Type Name="Sale_check">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sale_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sale_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Seller_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="remaining_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Screen_Title" Member="Screen_Titles">
+    <Type Name="Screen_Title">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Screen_Title" Member="Screen_Title1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sysdiagrams" Member="sysdiagrams">
+    <Type Name="sysdiagram">
+      <Column Name="name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="principal_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="diagram_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="definition" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Type_item" Member="Type_items">
+    <Type Name="Type_item">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sale_check_details" Member="Sale_check_details">
+    <Type Name="Sale_check_detail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sale_check_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="item_sale_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Paid_price_item" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment_Out" Member="Payment_Outs">
+    <Type Name="Payment_Out">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cashier_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pay_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Items" Member="Used_Items">
+    <Type Name="Used_Item">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producing_Company_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Screen_Title_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Payment_In" Member="Used_Payment_Ins">
+    <Type Name="Used_Payment_In">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cashier_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pay_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Payment_Out" Member="Used_Payment_Outs">
+    <Type Name="Used_Payment_Out">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cashier_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pay_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Purchase_check" Member="Used_Purchase_checks">
+    <Type Name="Used_Purchase_check">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cashier_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Discount_Val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_Val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="remaining_Val" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Purchase_Check_details" Member="Used_Purchase_Check_details">
+    <Type Name="Used_Purchase_Check_detail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="purchase_check_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Return_check" Member="Used_Return_checks">
+    <Type Name="Used_Return_check">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Return_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Return_from" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cashier_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="sale_check_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Return_Check_details" Member="Used_Return_Check_details">
+    <Type Name="Used_Return_Check_detail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Return_check_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Sale_Check" Member="Used_Sale_Checks">
+    <Type Name="Used_Sale_Check">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Sale_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sale_to" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Seller_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="remaining_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Used_Sale_Check_details" Member="Used_Sale_Check_details">
+    <Type Name="Used_Sale_Check_detail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sale_check_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Item_Sale_Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Paid_Item_Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment_Return_clients" Member="Payment_Return_clients">
+    <Type Name="Payment_Return_client">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cashier_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment_Return_Clients_Used" Member="Payment_Return_Clients_Useds">
+    <Type Name="Payment_Return_Clients_Used">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Casheir_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pay_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.back_mazaya" Method="back_mazaya">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.get_purch_check_id" Method="get_purch_check_id">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="get_purch_check_idResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="purch_details_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="item_details" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.get_sale_check_by_id" Method="get_sale_check_by_id">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="get_sale_check_by_idResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sale_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sale_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="remaining" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="sale_details_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="item_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.get_sale_check_by_id2" Method="get_sale_check_by_id2">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="get_sale_check_by_id2Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sale_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sale_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="remaining" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="sale_details_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="item_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ins_Items" Method="ins_Items">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recieve_Price" Parameter="recieve_Price" Type="System.Double" DbType="Float" />
+    <Parameter Name="sale_Price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Producing_company_id" Parameter="producing_company_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="screen_title" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_payment" Method="ins_payment">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cah_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Parameter Name="N" Parameter="n" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_payment_in" Method="ins_payment_in">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cah_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Parameter Name="N" Parameter="n" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_production_company" Method="ins_production_company">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_purchase_check_detail" Method="ins_purchase_check_detail">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="purchase_check_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_returns_check_detail" Method="ins_returns_check_detail">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="return_check_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_type" Method="ins_type">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_Purchase_check" Method="insert_Purchase_check">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="recieveDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="supplierName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="suppliercompany" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="cashier_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalPrice" Parameter="totalPrice" Type="System.Double" DbType="Float" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dif" Type="System.Double" DbType="Float" />
+    <Parameter Name="discount" Type="System.Double" DbType="Float" />
+    <Parameter Name="addition" Type="System.Double" DbType="Float" />
+    <Parameter Name="remaining" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_return_check" Method="insert_return_check">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="saleDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="saleto" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="seller_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalPrice" Parameter="totalPrice" Type="System.Double" DbType="Float" />
+    <Parameter Name="sale_check_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dif" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_sale_check" Method="insert_sale_check">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="saleDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="saleto" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="seller_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalPrice" Parameter="totalPrice" Type="System.Double" DbType="Float" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dif" Type="System.Double" DbType="Float" />
+    <Parameter Name="discount" Type="System.Double" DbType="Float" />
+    <Parameter Name="add" Type="System.Double" DbType="Float" />
+    <Parameter Name="remain" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.plus_item_count" Method="plus_item_count">
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.purch_checks_date" Method="purch_checks_date">
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="purch_checks_dateResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="diff" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.purch_checks_month" Method="purch_checks_month">
+    <Parameter Name="m" Type="System.Int32" DbType="Int" />
+    <Parameter Name="y" Type="System.Int32" DbType="Int" />
+    <ElementType Name="purch_checks_monthResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="diff" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.purch_details" Method="purch_details">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="purch_detailsResult">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.register" Method="register">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Uname" Parameter="uname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="pass" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="state" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.report_checks_between_dates" Method="report_checks_between_dates">
+    <Parameter Name="fdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ldate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="report_checks_between_datesResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="diff" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.return_checks_date" Method="return_checks_date">
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="return_checks_dateResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Return_from" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.return_checks_month" Method="return_checks_month">
+    <Parameter Name="m" Type="System.Int32" DbType="Int" />
+    <Parameter Name="y" Type="System.Int32" DbType="Int" />
+    <ElementType Name="return_checks_monthResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Return_from" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.return_details" Method="return_details">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="return_detailsResult">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sale_checks_date" Method="sale_checks_date">
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sale_checks_dateResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sale_checks_month" Method="sale_checks_month">
+    <Parameter Name="m" Type="System.Int32" DbType="Int" />
+    <Parameter Name="y" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sale_checks_monthResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sale_details" Method="sale_details">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sale_detailsResult">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.select_purchase_report" Method="select_purchase_report">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="select_purchase_reportResult">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[total cost for goods]" Member="total_cost_for_goods" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[casheir name]" Member="casheir_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sub_item_count" Method="sub_item_count">
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_diff" Method="update_diff">
+    <Parameter Name="i" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_item_saleprice" Method="update_item_saleprice">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sale_price" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateitemcouunt" Method="updateitemcouunt">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateitemcouunt2" Method="updateitemcouunt2">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateProfile" Method="updateProfile">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="state" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="lname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tel" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="hint" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_Sale_check_detail" Method="ins_Sale_check_detail">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sale_check_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="unit_price" Type="System.Double" DbType="Float" />
+    <Parameter Name="paid_price_item" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.get_return_sale_check_by_id" Method="get_return_sale_check_by_id">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="get_return_sale_check_by_idResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Return_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Return_from" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[paid mount]" Member="paid_mount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="return_details_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="remaining" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="item_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.get_store_items" Method="get_store_items">
+    <ElementType Name="get_store_itemsResult">
+      <Column Name="Items_Names" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ins_payment_out" Method="ins_payment_out">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cah_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Parameter Name="N" Parameter="n" Type="System.String" DbType="NVarChar(70)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_diff_purchase_out" Method="update_diff_purchase_out">
+    <Parameter Name="i" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insert_Used_Purchase_check" Method="insert_Used_Purchase_check">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="recieveDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="supplierName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="suppliercompany" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="cashier_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalPrice" Parameter="totalPrice" Type="System.Double" DbType="Float" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dif" Type="System.Double" DbType="Float" />
+    <Parameter Name="discount" Type="System.Double" DbType="Float" />
+    <Parameter Name="addition" Type="System.Double" DbType="Float" />
+    <Parameter Name="remaining" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_Used_itemcouunt2" Method="update_Used_itemcouunt2">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ins_Used_Items" Method="ins_Used_Items">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Recieve_Price" Parameter="recieve_Price" Type="System.Double" DbType="Float" />
+    <Parameter Name="sale_Price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Producing_company_id" Parameter="producing_company_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="screen_title" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_ins_purchase_check_detail" Method="Used_ins_purchase_check_detail">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="purchase_check_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_get_purch_check_id" Method="Used_get_purch_check_id">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Used_get_purch_check_idResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="purch_details_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="item_details" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_ins_Sale_check_detail" Method="Used_ins_Sale_check_detail">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sale_check_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="unit_price" Type="System.Double" DbType="Float" />
+    <Parameter Name="paid_price_item" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_sub_item_count" Method="Used_sub_item_count">
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_insert_sale_check" Method="Used_insert_sale_check">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="saleDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="saleto" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="seller_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalPrice" Parameter="totalPrice" Type="System.Double" DbType="Float" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dif" Type="System.Double" DbType="Float" />
+    <Parameter Name="discount" Type="System.Double" DbType="Float" />
+    <Parameter Name="add" Type="System.Double" DbType="Float" />
+    <Parameter Name="remain" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_get_sale_check_by_id2" Method="Used_get_sale_check_by_id2">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Used_get_sale_check_by_id2Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sale_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Sale_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="remaining" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Addition_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Discount_val" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="sale_details_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="item_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_update_item_saleprice" Method="Used_update_item_saleprice">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sale_price" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_insert_return_check" Method="Used_insert_return_check">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="saleDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="saleto" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="seller_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalPrice" Parameter="totalPrice" Type="System.Double" DbType="Float" />
+    <Parameter Name="sale_check_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="dif" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_ins_returns_check_detail" Method="Used_ins_returns_check_detail">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="item_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="notes" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="return_check_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_plus_item_count" Method="Used_plus_item_count">
+    <Parameter Name="count" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_get_return_sale_check_by_id" Method="Used_get_return_sale_check_by_id">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Used_get_return_sale_check_by_idResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Return_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Return_from" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[paid mount]" Member="paid_mount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="return_details_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="remaining" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="item_notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.USed_get_store_items" Method="USed_get_store_items">
+    <ElementType Name="USed_get_store_itemsResult">
+      <Column Name="Items_Names" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_purch_checks_date" Method="Used_purch_checks_date">
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Used_purch_checks_dateResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="diff" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_purch_details" Method="Used_purch_details">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Used_purch_detailsResult">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Recieve_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_sale_checks_date" Method="Used_sale_checks_date">
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Used_sale_checks_dateResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_To" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_sale_details" Method="Used_sale_details">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Used_sale_detailsResult">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_return_checks_date" Method="Used_return_checks_date">
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Used_return_checks_dateResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Return_from" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Total_price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="difference_col" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="diff" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_return_details" Method="Used_return_details">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Used_return_detailsResult">
+      <Column Name="Item_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sale_Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Used_ins_payment_in" Method="Used_ins_payment_in">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cah_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Parameter Name="N" Parameter="n" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_update_diff" Method="Used_update_diff">
+    <Parameter Name="i" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_ins_payment_out" Method="Used_ins_payment_out">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cah_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Parameter Name="N" Parameter="n" Type="System.String" DbType="NVarChar(70)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Used_update_diff_purchase_out" Method="Used_update_diff_purchase_out">
+    <Parameter Name="i" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payment_Return_Client" Method="payment_Return_Client">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cah_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Parameter Name="N" Parameter="n" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_diff_return_clients" Method="update_diff_return_clients">
+    <Parameter Name="i" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.payment_Return_Client_Used" Method="payment_Return_Client_Used">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cah_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="d" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Parameter Name="N" Parameter="n" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.update_diff_return_clients_Used" Method="update_diff_return_clients_Used">
+    <Parameter Name="i" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
